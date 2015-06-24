@@ -1,0 +1,21 @@
+<script>
+
+
+
+for (bottles = 99; bottles > 0; --bottles)
+{
+if (bottles == 2) {
+document.write(bottles + " bottles of beer on the wall " + bottles + " bottles of beer \
+you take one down, pass it around, " + (bottles - 1) + " bottle of beer on the wall! <br>")
+continue
+}
+else if (bottles == 1) {
+document.write(bottles + " bottle of beer on the wall " + bottles + " bottle of beer \
+you take one down, pass it around, no more bottles of beer on the wall! <br>")
+break
+}
+
+document.write(bottles + " bottles of beer on the wall " + bottles + " bottles of beer \
+you take one down, pass it around, " + (bottles - 1) + " bottles of beer on the wall! <br>")
+}
+</script>
