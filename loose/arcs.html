@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Complex Path Drawing Lines</title>
+</head>
+<body>
+<canvas id='canv' width='1000' height='500'>Hello</canvas>
+<script>
+canvas = document.getElementById('canv')
+context = canvas.getContext('2d')
+canvas.style.background = 'lightblue'
+context.strokeStyle = 'blue'
+arcs = 
+[
+Math.PI,
+Math.PI * 2,
+Math.PI / 2,
+Math.PI / 180 * 59
+]
+
+for (j = 0; j < 4; ++j)
+{
+	context.beginPath()
+	context.arc(80 + j * 160, 80, 70, 0, arcs[j])
+	context.closePath()
+	context.stroke()
+	}
+
+context.strokeStyle = 'red'
+for (j = 0 ; j < 4 ; ++j) 
+{  context.beginPath()  
+context.arc(80 + j * 160, 240, 70, 0, arcs[j])  
+context.stroke()  
+context.closePath() 
+}
+context.strokeStyle = 'green'
+for (j = 0 ; j < 4 ; ++j) 
+{  context.beginPath()  
+context.arc(80 + j * 160, 400, 70, 0, arcs[j], true)  
+context.stroke()  
+context.closePath() 
+}
+context.strokeStyle = 'orange'
+for (j = 0; j <= 280; j += 40)
+{
+	context.beginPath()
+	context.moveTo(600,400)
+	context.arcTo(500, 500, 450, 100, j)
+	context.lineTo(460,20)
+	context.stroke()
+	context.closePath()
+	}
+	
+myimage = new Image()
+myimage.src = 'dog.jpg'
+
+myimage.onload = function()
+{
+	context.drawImage(myimage, 20, 20)
+	context.drawImage(myimage, 400,200)
+	context.drawImage(myimage, 400,200, 50, 50)
+	context.drawImage(myimage,30,30,40,40,20,140,100,100)
+	}
+</script>

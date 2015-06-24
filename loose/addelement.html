@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Making a DOM element</title>
+<script src='OSC.js'></script>
+</head>
+<body>
+<p>HELLO I AM SOMETHING ON THE DOCUMENT</p>
+<script>
+alert("Add an element to the DOM pls")
+
+lediv = document.createElement("div")
+lediv.id = "LeDiv"
+document.body.appendChild(lediv)
+
+S(lediv).border = "solid 3px blue"
+S(lediv).fontSize = "20px"
+S(lediv).height = "100px"
+S(lediv).width = "100px"
+
+lediv.innerHTML = "Im the new object inserted in the Document Object Model"
+tmp = lediv.offsetTop
+
+alert("click OK to remove this element from the DOM")
+
+pnode = lediv.parentNode
+pnode.removeChild(lediv)
+tmp = pnode.offsetTop
+</script>
+</body>
+</html>
+
