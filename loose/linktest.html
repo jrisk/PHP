@@ -1,0 +1,184 @@
+<!-- linktest -->
+
+<html>
+<head>
+<title>Lets try a Link</title>
+</head>
+<body>
+<a id='mylink' href='http://www.riskvb.com'>CLICK ME NAO PLox</a><br>
+<a id='tester' href='www.google.com'>CLICK PLEEESE</a><br>
+<script>
+url = document.links[0].href
+document.write("The URL is " + url)
+numlinks = document.links.length
+for (j = 0; j < numlinks; ++j)
+document.write(document.links[j].href + '<br>')
+document.write(history.length)
+// document.location.href='www.google.com'
+// five types of literals
+myname = "joe"
+myage = 24
+document.write('a: ' + 24 + '<br>') // numeric literal
+document.write('b: ' + 'hello' + '<br>') // string literal
+document.write('c: ' + true + '<br>') // constant literal
+document.write('d: ' + myname + '<br>') // string variable
+document.write('e: ' + myage + '<br>') // numeric variable
+day_number = 9; days_to_new_year = 366 - day_number
+
+if (days_to_new_year < 100) document.write("ITS ALMOST A NEW YEER")
+else document.write("NOPE WE STILL HAVE " + days_to_new_year + " DAYS BEFORE THE NEW YEAR")
+document.write(days_to_new_year)
+
+a = 8; b = 0
+
+if (a + b < 11) document.write("yes")
+if (!(a + b > 20)) document.write('naaah')
+document.write((a && b) + "<br>")
+document.write((a || b) + "<br>")
+finished = 1
+if (finished == 1 || gc == 1) document.write("or statement") // gc wont be called if finished is true unless introduces as function 
+
+string = "The quick brown fox jumps over the moon"
+with (string)
+{
+document.write("the string is " + length + "characters long <br>")
+document.write("the string is in uppercase: " + toUpperCase())
+}
+
+onerror = errorHandler // onerror displays message in browser
+document.write("hello and welcome to the site")
+
+function errorHandler(message, url, line)
+{
+out = "Sorry and error occured \n\n";
+out += "Error: " + message + "\n";
+out += "URL: " + url + "\n";
+out += "Line: " + line + "\n";
+out += "CLICK OK to cointune \n\n";
+alert(out)
+return true;
+}
+
+//using try..catch to find errors
+
+</script>
+
+<script>
+try
+{
+request = new XMLHTTPRequest()
+}
+catch(err)
+{
+// Use a different method to create an XML HTTP Request object, AJAX
+}
+finally
+{
+alert("The try clause was encountered")
+}
+//conditionals alter program flow. 
+//non-looping conditionals are if, switch, and ? : operator
+
+if (a < 100)
+{
+var b = 2
+document.write("a is less than 100 and now b = 2")
+}
+
+if (b == 2) document.write("b was 0 and now is 2")
+
+if (b === 2) 
+{
+a = 100
+document.write("b is really, really an interger 2")
+}
+else document.write("b is not 2")
+
+if (a > 100) document.write("a is more than 100")
+else if (a < 100) document.write("a is less than 100")
+else document.write("a must be equal to 100")
+
+page = 'about'
+
+switch (page)
+{
+case "home":
+document.write("you have selected home")
+break
+
+case "login":
+document.write("you have selected login")
+break
+
+case "about":
+document.write("you want to know more about us")
+break
+
+default:
+document.write("why u no select")
+break
+}
+
+a = 99
+
+document.write(
+	a >= 100 ?
+	"a is equal to or greater than 100" :
+	"a is not equal to or greater than 100"
+	)
+	
+document.write(a == 99 ? "yes" : "no")
+</script>
+<script>
+counter = 0
+
+while (counter < 10)
+{
+document.write("Counter: " + counter + "<br>")
+++counter
+}
+
+count = 1
+seben = 7
+
+do
+{
+document.write("seven times " + count + " equals " + count * seben + "<br>")
+}
+while (++count <= 7)
+
+for (counting = 1; counting <= 7; ++counting)
+document.write(counting + "times 7 is" + counting * seben + "<br>")
+
+// break command in a for loop
+haystack = new Array()
+haystack[17] = "needle"
+haystack[19] = 'needle'
+document.write(haystack)
+
+for (j = 0; j < 20; ++j)
+{
+	if (haystack[j]  == "needle")
+	{
+	document.write("haystack needle was found in " + j + " location")
+	break // stops the loop when this condition is met
+	}
+	else document.write("haystack location " + j + " cleared<br>")
+	}
+
+for (j = 0; j <= 20; ++j)
+{
+	if (haystack[j] == 'needle')
+	{
+	document.write("needle found in haystack " + j + "<br>")
+	continue
+	}
+	document.write("location " + j + " cleared. No needle found<br>")
+	}
+	
+document.write(parseInt(3.4523452345))
+document.write(parseInt(10/4))
+document.write(10/4)
+</script>
+</body>
+</html>

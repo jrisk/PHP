@@ -1,0 +1,64 @@
+<!--urlpost.html -->
+<!DOCTYPE html>
+<html>
+<head><title>First Ajax Program</title></head>
+<body style='text-align:center'>
+<h1>Loading a Web Page into a DIV</h1>
+<div id='info'>This will be replaced</div>
+
+<script>
+params = "url=amazon.com/gp/aw"
+request = new ajaxRequest()
+
+request.open("POST", "urlpost.php", true)
+request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+request.setRequestHeader("Content-length", params.length)
+request.setRequestHeader("Connection", "close")
+
+request.onreadystatechange = function()
+{
+	if (this.readyState == 4)
+	{
+		if (this.status == 200)
+		{
+			if (this.responseText != null)
+			{
+				document.getElementById('info').innerHTML = this.responseText
+				}
+			else alert("Ajax Error: No Data Received")
+			}
+		else alert("Ajax Error: " + this.statusText)
+		}
+	}
+
+request.send(params)
+
+function ajaxRequest()
+{
+	try { //non-IE browser
+		var request = new XMLHttpRequest()
+		}
+	catch(e1)
+	{	
+		try
+		{ // ie broswer then 
+		request = new ActiveXObject("Msxml12.XMLHTTP")
+		}
+	catch(e2)
+	{    
+		try { // doesnt support 1.6, so 1.5 maybe
+		request = new ActiveXObject("Microsoft.XMLHTTP")
+		}
+	catch(e3)
+		{ // javascript off or no AJAX support?
+		request = false
+		}
+	}
+	}
+return request
+}
+</script>
+</body>
+</html>
+
+

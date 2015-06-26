@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Complex Path Drawing Lines</title>
+</head>
+<body>
+<canvas id='canv' width='500' height='500'>Hello</canvas>
+<script>
+canvas = document.getElementById('canv')
+context = canvas.getContext('2d')
+canvas.style.background = 'lightblue'
+context.strokeStyle = 'orange'
+context.fillStyle = 'yellow'
+   orig   = 160      
+   points = 21      
+   dist = Math.PI / points * 2      
+   scale1 = 150      
+   scale2 = 80
+      context.beginPath()
+     for (j = 0 ; j < points ; ++j)      
+	  {
+	  x = Math.sin(j * dist) 
+	  y = Math.cos(j * dist) 
+	  context.lineTo(orig + x * scale1, orig + y * scale1)
+	  context.lineTo(orig + x * scale2, orig + y * scale2)      
+	  }
+      context.closePath()  
+	  context.stroke()
+	  context.fill()
+
+	context.beginPath()
+	
+	for (j = 0; j < 10; ++j)
+	{
+		context.moveTo(20, j * 48)
+		context.lineTo(620, j * 48)
+		context.lineTo(620, j * 48 + 30)
+		context.lineTo(20, j * 48 + 30)
+		}
+	context.clip()
+	context.closePath()
+	context.fillStyle   = 'blue' 
+	context.fillRect(20, 20,  600, 320) 
+	context.fillStyle   = 'green'
+	context.fillRect(20, 320, 600, 140) 
+	context.strokeStyle = 'orange' 
+	context.fillStyle   = 'yellow'
+
+</script>
+</body>

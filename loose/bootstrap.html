@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" ng-app="weatherApp">
+<style>
+#herper {
+	
+	-webkit-transition: color 1s ease,background-color 1s ease;
+	transition: color 1s ease,
+	background-color 1s ease }
+</style>
+<script>
+var _index = 0, colors = ["#0e76bd", "#aa43a0" ,"#5ad1e3"];
+
+setInterval(changeColor, 1000);
+
+function changeColor() {
+    $('#herper').css({ 'color': colors[_index] });
+    $('.splash, .active').css({'background-color':colors[_index]});
+    _index = (_index < colors.length-1) ? _index+1 : 0;
+}
+window.onload = function() {
+	var count = 0;
+	var herper = document.getElementById("herper");
+	var herp = document.getElementById("imagey");
+	herp.onclick = function() {
+		count++;
+		var h2doc = document.getElementById("leh2");
+		h2doc.innerHTML = "clicked the pic got a new h2 innerhtml" + count + "<br>";
+			if (count > 24) {
+				herp.src = "giffy2.gif"
+				}
+		}
+	}
+		
+</script>
+<head>
+<title>
+Hello Bootstrap CSS
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+
+
+<body>
+<div weather>
+</div>
+<div class="container">
+<h1 id="herper">FIXED WIDTH RESPONSIVE CONTAINER</h1>
+<table class="table-hover">
+<thead>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>email</th>
+</tr>
+</thead>
+<tbody>
+<tr class="success">
+<td>John</td>
+<td>Doe</td>
+<td>jdoe25</td>
+</tr>
+<tr class="danger">
+<td>Marcus</td>
+<td>Aurelius</td>
+<td>maurelius26@email.com</td>
+</tr>
+<tr class="active">
+<td>Jane</td>
+<td>Doeloa</td>
+<td>jdoeloa27</td>
+</tr>
+</tbody>
+</table>
+<p>This is a bootstrap page. It includes a stylsheet link to a content delivery network with CSS.
+This is normally cached in the browser from other sites that the user has been on which includes it so faster.
+Also javascript and jquery are linked because most sites want to take advantage of these tools.
+</p>
+</div>
+
+<div class="container-fluid">
+<h1>THIS IS A FLUID, FULL WIDTH CONTAINER</h1>
+<p>Hello. Bootstrap CSS is a front-end framework of CSS that fits most kinds of screens
+It's responsive design lets websites looks good on mobile, tablets, desktops, any size of screen on any device.
+It's "mobile first." It was created in 2011 and has design templates for HTML and CSS for typography, forms, buttons,
+navigations, modals, image carousels, etc</p>
+</div>
+
+<h2 id="leh2">what</h2><img id="imagey" src="sabergirl.jpg" class="img-responsive" width="200" height="500"></img>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/Qhq1FDL0NNQ"></iframe>
+</div>
+
+<div class="row">
+	<div class="col-sm-8">COL TABLET 8</div>
+	<div class="col-sm-4">COL TABLET 4</div>
+</div>
+<div class="row">
+	<div class="col-xs-8" style="background-color:lavender">COL PHONE 8</div>
+	<div class="col-xs-4">COL <mark>PHONE 4</mark></div>
+</div>
+</body>
+</html>

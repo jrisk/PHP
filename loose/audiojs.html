@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>audio in javascript</title>
+</head>
+<body>
+<audio id='leaudio'>
+	<source src='Daft Punk - Beyond.mp3' type='audio/mp3'>
+</audio>
+<button onclick='playaudio()'>Play Song</button>
+<button onclick='pauseaudio()'>Pause Song</button>
+<video id='levideo' width='640' height='360'>
+<source src='costanza.webm' type='video/webm'>
+</video>
+<button onclick='playvideo()'>Play Video</button>
+<button onclick='pausevideo()'>Pause Video</button>
+<button onclick='playvidandsong()'>Play Both at Same Time for Hilarity</button>
+<script>
+function playvidandsong()
+{
+	playaudio()
+	playvideo()
+	}
+
+function playaudio()
+{
+	start = document.getElementById('leaudio')
+	start.play()
+	}
+function pauseaudio()
+{
+	pauseit = document.getElementById('leaudio')
+	pauseit.pause()
+}
+function playvideo()
+{
+	start = document.getElementById('levideo')
+	start.play()
+	}
+function pausevideo()
+{
+	pauseit = document.getElementById('levideo')
+	pauseit.pause()
+}
+</script>
+</body>
+</html>

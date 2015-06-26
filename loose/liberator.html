@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<title>What</title>
+</head>
+<body>
+<script> var passengers = [ {name: "Dan Stanman", paid: true, ticket: "coach" }, {name: "Laura Lee", paid: false, ticket: "first class" }, 
+{name: "Shogun McTits", paid: true, ticket: "premium"}, {name: "Bart Steveson", paid: false, ticket: "first class"} ]
+
+function servePassenger(passengers) {
+	for (var i = 0; i < passengers.length; ++i) {
+		serveCustomer(passengers[i]);
+		}
+	}
+	
+function serveCustomer(passenger) {
+	var getDrinkOrderFunction = drinkOrder(passenger);
+	var getFoodOrderFunction = foodOrder(passenger);
+	
+	getDrinkOrderFunction();
+	getFoodOrderFunction();
+	}
+	
+function foodOrder(passenger) {
+	var orderFunction;
+	
+	if (passenger.ticket === "first class") {
+		orderFunction = function() {
+			alert("would you like the special beef teriyaki tonight?")
+			}
+		}
+	else if (passenger.ticket === "premium") {
+		orderFunction = function() {
+			alert("would you like our beef supreme stroganoff?")
+			}
+		}
+	else {
+		orderFunction = function() {
+		alert("would you like the chicken tendies tonight?")
+		}
+	}
+	return orderFunction
+}
+	
+function drinkOrder(passenger) {
+	var orderFunction;
+	
+	if (passenger.ticket === "first class") {
+		orderFunction = function() {
+		alert("would you like a cocktail or some wine?")
+		}
+	}
+	else if (passenger.ticket === "premium") {
+		orderFunction = function() {
+			alert("would you like cocktail, wine, water, or cola?")
+			}
+		}
+	else {
+		orderFunction = function() {
+			alert("would you like some coke or water?")
+			}
+		}
+	return orderFunction
+}
+servePassenger(passengers)
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Lesson Planner 1.0</title>
+<!----Including CSS for different screen sizes--->
+<link rel="stylesheet" type="text/css" href="formstuff.css" />
+</head>
+<body>
+<form action="/my-handling-form-page" method="post">
+<div id="header">
+	<h2>Plan your schedule and lesson goals</h2>
+</div>
+<div id="Date">
+	<p>Date</p>
+</div>
+	<div>
+		<label for="name">Today's Lesson:</label>
+		<input type="text" id="name" />
+	</div>
+	<div>
+		<label for="activity">Activity:</label>
+		<input type="msg" id="activity" />
+	</div>
+	<div>
+		<label for="msg">Message</label>
+		<textarea id="msg"></textarea>
+	</div>
+	
+	<div class="button">
+		<button type="submit">Finalize</button>
+	</div>
+</form>
+<body>Today's date is <?php echo date("l, F, jS, Y"); ?>. Hello. </body>

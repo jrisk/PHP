@@ -1,0 +1,100 @@
+
+
+<script>// objects javascript classes
+function User(firstname, username, password)
+{
+this.firstname = firstname
+this.username = username
+this.password = password
+
+	User.prototype.showUser = function()
+	{
+		document.write("firstname: " + this.firstname + "<br>")
+		document.write("username: " + this.username + "<br>")
+		document.write("password: " + this.password + "<br>")
+	}
+		
+}
+
+// can also seperately define class and method
+
+function Friend(firstname, username, password)
+{
+	this.firstname = firstname
+	this.username = username
+	this.password = password
+	this.showFriend = showFriend
+	
+}
+function showFriend()
+{
+	document.write('firstname: ' + this.firstname + "<br>")
+	document.write('username: ' + this.username + "<br>")
+	document.write('password: ' + this.password + "<br>")
+}
+
+// creating an instance of an object 
+
+details = new User('Wolfgang', 'amadeus', 'pianobruh')
+
+// or create an empty object instance
+
+personalinfo = new Friend()
+// and then populate it later....
+
+personalinfo.firstname = "Wolfgang"
+personalinfo.username = "amadeus"
+personalinfo.password = "pianobrrrruh"
+// can add new properties as well
+
+personalinfo.greeting = "hello thar"
+document.write(personalinfo.greeting)
+
+details.showUser()
+
+newstuff = personalinfo.showFriend()
+
+User.prototype.greeting = "what is up my nword"
+
+document.write(details.greeting)
+</script>
+
+<script>
+String.prototype.nbsp = function()
+{
+return this.replace(/ /g, 'nbsp;')
+}
+document.write("the    brown    fox".nbsp())
+</script>	
+<script>
+String.prototype.trim = function() {  return this.replace(/^\s+|\s+$/g, '') } 
+document.write("     TRIM PLS     ".trim())
+</script>
+<script>
+learray = new Array()
+//or 
+arrayname = []
+
+learray.push('element1')
+learray.push('element2')
+learray[2] = 'element3'
+
+document.write(learray.length)
+document.write(learray)
+
+numbers = []
+numbers.push('ONE')
+numbers.push('TWO')
+numbers.push('THREE')
+
+for (p = 0; p < numbers.length; ++p)
+
+document.write("NUMBER: " + p + "=" + numbers[p] + "<br>")
+
+NA = {"USA": "MIDDLE", "CANADA": "TOP", "MEXICO": "BOTTOM"}
+
+for (counts in NA)
+document.write("THE COUNTRY OF " + counts + "IS GEOGRAPHICALLY LOCATED IN/ON THE " + NA[counts])
+document.write(NA['USA'])
+
+</script>

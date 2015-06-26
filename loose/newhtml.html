@@ -1,0 +1,54 @@
+<!-- more html -->
+
+<html>
+<head>
+<title>New page</title>
+</head>
+<body>
+<div class="newdiv">Hello this is the gradient featureit is used extenseivley by artists and the like to create a color effect of transition that is easy on the eyes and a cheap way to 
+add character to a design</div>
+<style> .newdiv { background: red;
+background: -webkit-linear-gradient(top, blue, green);
+border-style: dotted;
+border-width: 30px;
+padding: 30px;
+background-clip: content-box;
+background-origin: padding-box;
+-webkit-column-count: 3;
+-webkit-column-gap: 2em;
+-webkit-colum-rule: 1px solid black;
+
+}
+img[src$='jpg'] { 
+border-style: dotted;
+border-width:30px;
+border-color: fuchsia;
+-webkit-transition-property: all;
+-webkit-transition-duration: .5s;
+-webkit-transition-delay: .5s;
+-webkit-transition-timing-function: ease;
+}
+
+img[src$='jpg']:hover {
+transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+}
+b { border-radius: 40px;
+border-color: blue;
+border-style: solid;
+box-shadow: 5px 5px 5px #888;
+-webkit-transform: rotate(45deg);
+-webkit-transition-duration: 2s;
+-webkit-transition-delay: 2s;
+-webkit-transition-timing: ease;}
+
+p { font-family: "Lobster", arial, serif;
+text-shadow: 3px 4px 4px #444;
+-webkit-transform: rotate(45deg)}
+</style>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<img src='1383090508569.jpg'></img>
+<p>Shadowed fookin text maye e made me a fuarkin peenyata</p>
+<b>wake up mr.freeman. wake up and smell the ashes.</b>
+</body>
+</html>

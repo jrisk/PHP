@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Kore wa yamato damashii desu</title>
+<script src='OSC.js'></script>
+</head>
+<body>
+<img id='leimage'>
+<canvas id='lecanvas' width='320' height='240'>
+THIS IS A CANVAS ELEMENT WITH NAME <i>lecanvas</i>
+ONLY SEEN IN NON HTML BROWSER</canvas>
+<script>
+canvas = O('lecanvas')
+context = canvas.getContext('2d')
+context.fillStyle = 'red'
+S(canvas).border = '1px solid black'
+
+context.beginPath()
+context.moveTo(160, 120)
+context.arc(160, 120, 70, 0, Math.PI * 2, false)
+context.closePath()
+context.fill()
+S('leimage').border = '1px solid black'
+O('leimage').src = canvas.toDataURL()
+O('leimage').src = canvas.toDataURL('image/png', 0.4)
+context.fillRect(20, 20, 600, 200)
+context.fillStyle = 'blue'
+
+</script>
+</body>
+</html>

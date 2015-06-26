@@ -1,0 +1,67 @@
+<script>// javascript objects, functions, arrays
+// function functionname(parameter [,...,...,...]
+// /f[oi]*x/
+
+displayItems('Dog', 'Cat', 'Lizard', 'TV', 'Computer', 'Phone')
+
+function displayItems(n1, n2, n3, n4, n5)
+{
+document.write(n1 + "<br>")
+document.write(n2 + "<br>")
+document.write(n3 + "<br>")
+document.write(n4 + "<br>")
+document.write(n5 + "<br>")
+}
+</script>
+<script>
+displayItems("Bed", "Mirror", "Food", "Bag", "Door", "Pillow")
+
+function displayItems(n1, n2, n3, n4, n5)
+{
+for (j = 0; j < displayItems.arguments.length; ++j)
+	document.write(displayItems.arguments[j] + "<br>")
+	}
+onerror = errorHandler
+
+function errorHandler(message, url, line)
+{
+out = "An error occured"
+out += "error: " + message + "<br>"
+out += "url: " + url + "<br>"
+out += "line number: " + line + "<br>"
+alert(out)
+return true
+}
+</script>
+<script>
+document.write(fixNames("thE", "dAlASS", "cowboyS"))
+
+function fixNames()
+{
+var s = ""
+for (j = 0; j < fixNames.arguments.length; ++j)
+
+s += fixNames.arguments[j].charAt(0).toUpperCase() +
+	fixNames.arguments[j].substr(1).toLowerCase() + " "
+	
+	return s.substr(0, s.length-1)
+}
+</script>
+<script>
+words = fixNames("yoUR", "arIZoNA", "cARDINALSs")
+words[2].replace('s','')
+for (k = 0; k < words.length; ++k)
+document.write(words[k] + "<br>")
+
+
+function fixNames()
+{
+var s = new Array()
+for (j = 0; j < fixNames.arguments.length; ++j)
+
+s[j] = fixNames.arguments[j].charAt(0).toUpperCase() +
+	fixNames.arguments[j].substr(1).toLowerCase()
+	
+	return s
+}
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WEB WORKERS</title>
+</head>
+<body>
+Current highest prime number: 
+<span id='result'>0</span>
+<script>
+if (!!window.Worker)
+{
+	var worker = new Worker('worker.js')
+	
+	worker.onmessage = function(event)
+	{
+		document.getElementById('result').innerHTML = event.data
+		}
+	}
+else
+	{
+		alert("web workers not supported")
+		}
+	</script>
+</body>
+</html>

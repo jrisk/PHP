@@ -1,0 +1,63 @@
+<!--ajax call with GET instead of POST -->
+<!DOCTYPE>
+<html>
+<head><title>2nd Ajax Program</title>
+<body style='text-align:center'>
+<div id='stuff'>AMAZON WEBPAGE GOES HERE</div>
+
+<script>
+nocache = "&nocache=" + Math.random() * 100000
+request = new AjaxRequest()
+request.open("GET", "urlpostget.php?url=amazon.com/gp/aw" + nocache, true)
+
+request.onreadystatechange = function()
+{
+	if (this.readyState == 4)
+	{
+		if (this.status == 200)
+		{
+			if (this.responseText != null)
+			{
+			document.getElementById('stuff').innerHTML = this.responseText
+			}
+		else alert("Ajax problem")
+		}
+	else alert("Ajax problem: " + this.statusText)
+	}
+}
+
+request.send(null)
+
+function AjaxRequest()
+{
+	try
+	{
+		var request = new XMLHttpRequest()
+		}
+	catch(e1)
+	{
+		try
+			{
+			request = new ActiveXObject("Msxml2.XMLHTTP")
+			}
+		catch(e2)
+		{
+			try 
+			{
+			request = new ActiveXObject("Microsoft.XMLHTTP")
+			}
+		catch(e3)
+			{
+			request = false
+			}
+		}
+	}
+	return request
+}
+
+
+
+</script>
+</body>
+</html>
+

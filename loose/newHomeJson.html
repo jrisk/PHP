@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Risk VB Modern Web Services</title>
+<img src="file://C:/Users/Joe/Desktop/Logo.jpg" width="120px" height="60px" background="lightblue" alt="Risk VB" ></img><hr>
+Modernize Your Online Presence
+
+
+<link rel="stylesheet" href="stylesheethome.css" type="text/css">
+<a class="twitter-timeline" href="https://twitter.com/JRisk" data-widget-id="586280738552737792">Tweets by @JRisk</a>
+<script>!function(d,s,id) {
+var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+<script type="text/javascript">
+// Prototypal Model
+var AnswerPrototype = {
+		constructor: function fn0(value) {
+			this._val = value;
+		},
+		get: function fn1() {
+			return this._val;
+		}
+	}
+var lifeAnswer = Object.create(AnswerPrototype);
+lifeAnswer.constructor(42);
+console.log(lifeAnswer.get());
+
+var dessertAnswer = Object.create(AnswerPrototype);
+dessertAnswer.constructor(3.14);
+console.log(dessertAnswer.get());
+
+// Classical Model (Use this Instead)
+function Answer(value) {
+	this._benis = value;
+}
+
+Answer.prototype.get = function fn1() {
+	return this._benis;
+}
+
+var lifAnswer = new Answer(42);
+console.log(lifAnswer.get());
+
+var dessrtAnswer = new Answer(3.14);
+console.log(dessrtAnswer.get());
+
+
+
+function ajax_get_json() {
+//first create the XMLHttpRequest object
+var hr = new XMLHttpRequest()
+var results = document.getElementById("results")
+hr.open("GET", "mylist.json", true);
+//set content type header for sending url encoded variable in the request
+hr.setRequestHeader("Content-type", "application/json", true);
+// access the onreadystatechage event in the XMLHttpRequest object
+hr.onreadystatechange = function() {
+if (hr.readyState == 4 && hr.status == 200) {
+	var data = JSON.parse(hr.responseText);
+	results.innerHTML = "";
+	for (var obj in data){
+		results.innerHTML += data[obj].user + " is in my list <br><hr>";
+		}
+	}
+}
+hr.send(null);
+results.innerHTML = '<img src="image.jpg"></img>';
+
+}
+
+var obj1 = {user: "John", age: 25, country: "United States"};
+var obj2 = {user: "Will", age: 30, country: "United Kingdom"};
+var obj3 = {user: "Maria", age: 31, country: "Mexico"};
+var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+document.write(obj1.user + " is younger than " + obj2.user + " who is younger than "
++ obj3.user + " who is " + obj3.age + " years old and lives in " + obj3.country);
+obj3.country = "Italy"
+document.write("<hr>")
+document.write("Now " + obj3.user + " lives in " + obj3.country);
+document.write("<hr>")
+document.write(obj4.u2.country)
+document.write("<hr>")
+document.write(obj4["u2"]["country"])
+var meat = ["bologna", "salami", "ham", "beef"]
+var fruit = ["banana", "apple", "orange", "grapes"]
+var obj5 = {arr1:meat, arr2:fruit}
+document.write("we have the " + obj5.arr1[0])
+</script>
+</head>
+<body>
+<br>
+FIRST NAME <input id="first_name" name="firstname" type="text">
+LAST NAME <input id="last_name" name="lastname" type="text">
+Submit <input value="Submit Form" type="submit" name="submitbutton" onClick="javascript:ajax_post()">
+<br>
+<div id="results"></div>
+<script>ajax_get_json()</script>
+
+
+<h1>Welcome to Risk VB!</h1>
+<h2><p>Providing Online Services for the New Web</p></h2>
+<b>Build new looking websites for less</b>
+<em>And keep people coming back!</em>
+<i>Fast, smooth websites</i>
+<small>With a</small>
+<strong>BIG</strong>
+<sup>social media presence</sup>And a great time for a
+<sub>for an extra 20$</sub>
+<mark>Marketing Plan</mark>
+<br>
+<ins>Inserted text</ins>
+<del>Deleted text</del>
+<br><br>
+<div class="col-md-2">
+<pre> ALl the world's a
+stage
+</pre>
+</div>
+<code><pre>var tingles = 0;
+for (var i = 10; i > tingles; i--) {
+	<kbd>in python:</kbd>
+	<samp>print("hello" + i)</samp> or <samp>print "hello"</samp>
+	<kbd>in javascript</kbd>
+	<samp>document.write("hello to the " + i "th iteration of this for loop")</samp>
+}
+</pre>
+</code>
+
+	
+
+<p>-Bick<blockquote>In a time of monkeys, I was a chimp and Z Butane in my veins and the plastic ass chunky</blockquote></p>
+
+<a href="#poop" alt="Google" target="_self">Google</a>
+<div id="middle-div">
+WASSUP
+</div>
+<a id="poop">HELLO AND WELCOME TO THE POOP a ID LINK</a>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>HELLO RECTANGLE</title>
+<script src='OSC.js'></script>
+</head>
+<canvas id='lecanv' width='1500' height='1000'>HELLO I AM CANVAS</canvas>
+<script>
+  canvas               = document.getElementById('lecanv')     
+  context              = canvas.getContext('2d')    
+  document.getElementById('lecanv').style.background = 'lightblue'     
+  document.getElementById('lecanv').getContext('2d').fillStyle    = 'blue'     
+  document.getElementById('lecanv').getContext('2d').strokeStyle  = 'green'
+      context.fillRect(20, 20, 600, 200)     
+	  context.clearRect(40, 40, 560, 160)     
+	  context.strokeRect(60, 60, 520, 120)
+	  document.write("HELLO THAR")
+	gradient = context.createLinearGradient(0, 80, 640, 80)
+	gradient.addColorStop(0, 'white')
+	gradient.addColorStop(1, 'black')
+	context.fillStyle = gradient
+	context.fillRect(80, 80, 480, 80)
+	
+	gradient = context.createLinearGradient(50, 0, 50, 300)
+	gradient.addColorStop(0, 'yellow')
+	gradient.addColorStop(1, 'red')
+	context.fillStyle = gradient
+	context.fillRect(80, 300, 480, 80)
+	
+	gradient = context.createLinearGradient(0,0,0,240)
+	gradient.addColorStop(0.11, 'red')
+	gradient.addColorStop(0.24, 'orange')
+	gradient.addColorStop(0.33, 'yellow')
+	gradient.addColorStop(0.45, 'green')
+	gradient.addColorStop(0.57, 'blue')
+	gradient.addColorStop(0.67, 'cyan')
+	gradient.addColorStop(0.78, 'purple')
+	context.fillStyle = gradient
+	context.fillRect(40, 40, 250, 250)
+	
+	gradientL = context.createRadialGradient(200, 120, 0, 480, 120, 480)
+	gradientL.addColorStop(0.11, 'red')
+	gradientL.addColorStop(0.24, 'orange')
+	gradientL.addColorStop(0.33, 'yellow')
+	gradientL.addColorStop(0.45, 'green')
+	gradientL.addColorStop(0.57, 'blue')
+	gradientL.addColorStop(0.67, 'cyan')
+	gradientL.addColorStop(0.78, 'purple')
+	context.fillStyle = gradientL
+	context.fillRect(300, 10, 600, 600)
+	context.font = 'bold 140px Times'	
+	context.lineWidth = 3
+	context.lineCap = 'square'
+	context.lineJoin = 'bevel'
+	image = new Image()
+	image.src = 'dog.jpg'
+	
+	image.onload = function()
+	{
+		pattern = context.createPattern(image, 'repeat')	
+		context.fillStyle = pattern
+		context.fillText('Hullabulloo', 0, 100)
+		context.strokeText('Hullabulloo', 0, 100)
+		}
+	metric = context.measureText('Hullabulloo')
+	width = metric.width
+	
+</script>

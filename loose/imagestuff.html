@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>chagne image Data</title>
+</head>
+<body>
+<canvas id='mycanvas' width='2000' height='2000'>HELLO</canvas>
+<script>
+canvas = document.getElementById('mycanvas')
+context = canvas.getContext('2d')
+
+thepic = new Image()
+thepic.src = 'dog.jpg'
+
+thepic.onload = function()
+{
+	types = [
+		'source-over', 'source-in', 'source-out',
+		'source-atop', 'destination-over', 'destination-in',
+		'destination-out', 'destination-atop', 'lighter',
+		'darker', 'copy', 'xor'
+		]
+		
+	for (j = 0; j < 12; ++j)
+	{
+		canvas = document.getElementById('mycanvas')
+		context = canvas.getContext('2d')
+		canvas.style.background = 'lightblue'
+		context.fillStyle = 'red'
+		
+		context.arc(50, 50, 50, 0, Math.PI * 2, false)
+		context.fill()
+		context.globalCompositeOperation = types[j]
+		context.drawImage(thepic, 20, 20, 100, 100)
+		}
+	}
+</script>
+		
